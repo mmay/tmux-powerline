@@ -3,7 +3,7 @@
 # Source lib to get the function get_tmux_pwd
 source "${TMUX_POWERLINE_DIR_LIB}/tmux_adapter.sh"
 
-branch_symbol="⭠"
+branch_symbol=""
 git_colour="5"
 svn_colour="220"
 hg_colour="45"
@@ -71,7 +71,7 @@ __parse_svn_branch() {
 	local svn_url=$(echo "${svn_info}" | sed -ne 's#^URL: ##p')
 
 	local branch=$(echo "${svn_url}" | egrep -o '[^/]+$')
-	echo "#[fg=colour${svn_colour}]${branch_symbol} #[fg=colour${TMUX_POWERLINE_CUR_SEGMENT_FG}]${branch}"
+	echo "#[fg=colour${svn_colour}]${branch_symbol}#[fg=colour${TMUX_POWERLINE_CUR_SEGMENT_FG}]${branch}"
 }
 
 __parse_hg_branch() {
